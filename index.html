@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Čalounictví Jiří Dobšík — O firmě</title>
+<meta name="description" content="Čalounictví Jiří Dobšík, Brno-Žebětín. Výroba sedacích souprav a postelí na míru, opravy čalouněného nábytku, autočalounění.">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/logo.jpg">
+</head>
+<body>
+
+<!-- =========================================================
+     HLAVIČKA S LOGEM A MENU (ZÁLOŽKY)
+     Tento blok je stejný na všech stránkách.
+     Pokud měníte název firmy, udělejte to na VŠECH stránkách stejně.
+     ========================================================= -->
+<header class="hlavicka">
+  <div class="hlavicka-obsah">
+    <div class="logo-blok">
+      <img src="assets/img/logo.jpg" alt="Logo - Čalounictví Jiří Dobšík">
+      <div>
+        <p class="nazev-firmy">Čalounictví Jiří Dobšík</p>
+        <p class="podnazev-firmy">Brno-Žebětín &middot; na míru, s citem pro detail</p>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html" class="aktivni">O firmě</a></li>
+        <li><a href="realizace.html">Realizace</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- =========================================================
+     HLAVNÍ OBSAH STRÁNKY "O FIRMĚ"
+     ----------------------------------------------------------
+     ZDE upravujte text o firmě. Stačí přepsat text mezi
+     značkami <p> ... </p> nebo <li> ... </li>.
+     Značky (to, co je v < > závorkách) neměňte ani nemažte.
+     ========================================================= -->
+<main class="obsah">
+  <h1>O naší firmě</h1>
+
+  <div class="karta">
+    <p>
+      Jsme rodinné čalounictví se sídlem v Brně-Žebětíně. Více než řemeslo
+      je pro nás čalounictví koníčkem a posláním — každému kusu nábytku
+      věnujeme péči, jako by byl náš vlastní. Specializujeme se na výrobu
+      nábytku na míru i opravy a renovace starších kusů, kterým chcete
+      dát druhý život.
+    </p>
+    <p>
+      Pracujeme s širokou nabídkou potahových látek, kůží a koženek a rádi
+      vám poradíme s výběrem materiálu, který bude ladit s vaším interiérem.
+    </p>
+  </div>
+
+  <div class="karta">
+    <h2>Co nabízíme</h2>
+    <ul class="seznam-sluzeb">
+      <li>Výroba sedacích souprav na míru</li>
+      <li>Výroba postelí na míru</li>
+      <li>Opravy čalouněného nábytku</li>
+      <li>Výroba matrací</li>
+      <li>Čalounění dveří</li>
+      <li>Autočalounění</li>
+      <li>Velký výběr potahových látek a kůží</li>
+      <li>Drobné dekorační práce</li>
+    </ul>
+  </div>
+
+  <div class="karta">
+    <h2>Proč zvolit nás</h2>
+    <p>
+      Dlouholetá praxe, individuální přístup ke každé zakázce a poctivé
+      řemeslo — to je základ naší práce. Rádi vám poradíme už při výběru
+      materiálu, provedeme zaměření přímo u vás, a výsledek dodáme přesně
+      podle vašich představ.
+    </p>
+  </div>
+</main>
+
+<!-- =========================================================
+     PATIČKA
+     ========================================================= -->
+<footer class="paticka">
+  &copy; <span id="rok"></span> Čalounictví Jiří Dobšík — Brno-Žebětín
+</footer>
+
+<script>document.getElementById("rok").textContent = new Date().getFullYear();</script>
+</body>
+</html>

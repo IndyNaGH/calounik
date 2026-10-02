@@ -1,0 +1,299 @@
+/* =========================================================
+   STYL WEBU - ČALOUNICTVÍ JIŘÍ DOBŠÍK
+   -----------------------------------------------------------
+   Tento soubor řídí vzhled (barvy, odstupy, fonty).
+   Pokud nejste technicky zdatní, tento soubor raději neupravujte.
+   Veškeré TEXTY se upravují přímo v souborech:
+     index.html    - O firmě
+     realizace.html - Fotogalerie realizací
+     kontakt.html  - Kontaktní údaje
+   ========================================================= */
+
+:root {
+  --barva-hnedá-tmavá: #4a3324;
+  --barva-hnedá: #7a5236;
+  --barva-hnedá-světlá: #a9794f;
+  --barva-béžová: #f3e9dc;
+  --barva-béžová-tmavá: #d8c3a5;
+  --barva-text: #3a2a1d;
+  --barva-bila: #fffaf4;
+  --stin: 0 4px 14px rgba(74, 51, 36, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", "Trebuchet MS", Verdana, Arial, sans-serif;
+  background-color: var(--barva-béžová);
+  color: var(--barva-text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--barva-hnedá);
+}
+
+/* ---------- HLAVIČKA ---------- */
+
+.hlavicka {
+  background-color: var(--barva-hnedá-tmavá);
+  color: var(--barva-bila);
+  padding: 18px 0;
+  box-shadow: var(--stin);
+}
+
+.hlavicka-obsah {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  gap: 16px;
+}
+
+.logo-blok {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-blok img {
+  height: 64px;
+  width: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--barva-béžová-tmavá);
+}
+
+.nazev-firmy {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--barva-bila);
+  margin: 0;
+}
+
+.podnazev-firmy {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--barva-béžová-tmavá);
+}
+
+/* ---------- MENU (ZÁLOŽKY) ---------- */
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.menu li a {
+  display: inline-block;
+  padding: 10px 18px;
+  text-decoration: none;
+  color: var(--barva-bila);
+  background-color: var(--barva-hnedá);
+  border-radius: 6px 6px 0 0;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.menu li a:hover {
+  background-color: var(--barva-hnedá-světlá);
+}
+
+.menu li a.aktivni {
+  background-color: var(--barva-béžová);
+  color: var(--barva-hnedá-tmavá);
+}
+
+/* ---------- HLAVNÍ OBSAH ---------- */
+
+.obsah {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px 60px 20px;
+}
+
+.obsah h1 {
+  color: var(--barva-hnedá-tmavá);
+  border-bottom: 3px solid var(--barva-béžová-tmavá);
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+.obsah h2 {
+  color: var(--barva-hnedá);
+}
+
+.karta {
+  background-color: var(--barva-bila);
+  border-radius: 10px;
+  padding: 28px 32px;
+  box-shadow: var(--stin);
+  margin-bottom: 24px;
+}
+
+.seznam-sluzeb {
+  columns: 2;
+  column-gap: 40px;
+  padding-left: 20px;
+}
+
+.seznam-sluzeb li {
+  margin-bottom: 8px;
+  break-inside: avoid;
+}
+
+/* ---------- KONTAKT ---------- */
+
+.kontakt-tabulka {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.kontakt-tabulka td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--barva-béžová-tmavá);
+  vertical-align: top;
+}
+
+.kontakt-tabulka td:first-child {
+  width: 180px;
+  font-weight: bold;
+  color: var(--barva-hnedá);
+  white-space: nowrap;
+}
+
+.mapa-wrap {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--stin);
+}
+
+.mapa-wrap iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+  display: block;
+}
+
+/* ---------- GALERIE REALIZACÍ ---------- */
+
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.galerie-polozka {
+  background-color: var(--barva-bila);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--stin);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.galerie-polozka:hover {
+  transform: translateY(-4px);
+}
+
+.galerie-polozka img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.galerie-popisek {
+  padding: 10px;
+  font-size: 0.9rem;
+  color: var(--barva-hnedá-tmavá);
+  font-weight: 600;
+}
+
+/* ---------- LIGHTBOX (ZVĚTŠENÝ OBRÁZEK) ---------- */
+
+.lightbox-pozadi {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.lightbox-pozadi.zobrazeno {
+  display: flex;
+}
+
+.lightbox-obsah {
+  max-width: 90vw;
+  max-height: 85vh;
+  text-align: center;
+}
+
+.lightbox-obsah img {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-popisek {
+  color: var(--barva-bila);
+  margin-top: 14px;
+  font-size: 1.1rem;
+}
+
+.lightbox-zavrit {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: var(--barva-bila);
+  font-size: 2.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* ---------- PATIČKA ---------- */
+
+.paticka {
+  background-color: var(--barva-hnedá-tmavá);
+  color: var(--barva-béžová-tmavá);
+  text-align: center;
+  padding: 18px 10px;
+  font-size: 0.9rem;
+}
+
+/* ---------- RESPONSIVITA ---------- */
+
+@media (max-width: 600px) {
+  .seznam-sluzeb {
+    columns: 1;
+  }
+
+  .nazev-firmy {
+    font-size: 1.2rem;
+  }
+
+  .karta {
+    padding: 20px;
+  }
+}

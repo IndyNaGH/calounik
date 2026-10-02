@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Čalounictví Jiří Dobšík — Realizace</title>
+<meta name="description" content="Ukázky realizací čalounictví Jiří Dobšík - sedací soupravy, postele, autočalounění a další.">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/logo.jpg">
+</head>
+<body>
+
+<header class="hlavicka">
+  <div class="hlavicka-obsah">
+    <div class="logo-blok">
+      <img src="assets/img/logo.jpg" alt="Logo - Čalounictví Jiří Dobšík">
+      <div>
+        <p class="nazev-firmy">Čalounictví Jiří Dobšík</p>
+        <p class="podnazev-firmy">Brno-Žebětín &middot; na míru, s citem pro detail</p>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">O firmě</a></li>
+        <li><a href="realizace.html" class="aktivni">Realizace</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="obsah">
+  <h1>Naše realizace</h1>
+  <p>Klikněte na obrázek pro zvětšení.</p>
+
+  <!-- =========================================================
+       GALERIE REALIZACÍ
+       ----------------------------------------------------------
+       KAŽDÁ UKÁZKA = JEDEN BLOK <div class="galerie-polozka">...</div>
+
+       Pro PŘIDÁNÍ nové realizace:
+         1. Nahrajte fotku do složky assets/img/realizace/
+            (ideálně pojmenovanou bez diakritiky a mezer,
+             např. "novy-obrazek.jpg")
+         2. Zkopírujte celý jeden blok níže (od <div class="galerie-polozka">
+            po uzavírací </div>) a vložte ho za poslední položku.
+         3. V src="..." změňte název souboru na ten váš nový.
+         4. V <p class="galerie-popisek"> změňte popisek.
+
+       Pro ODEBRÁNÍ realizace: smažte celý příslušný blok.
+       ========================================================= -->
+  <div class="galerie">
+
+    <div class="galerie-polozka">
+      <img src="assets/img/realizace/realizace-1.jpg" alt="Sedací souprava na míru">
+      <p class="galerie-popisek">Sedací souprava na míru</p>
+    </div>
+
+    <div class="galerie-polozka">
+      <img src="assets/img/realizace/realizace-2.jpg" alt="Postel na míru">
+      <p class="galerie-popisek">Postel na míru</p>
+    </div>
+
+    <div class="galerie-polozka">
+      <img src="assets/img/realizace/realizace-3.jpg" alt="Autočalounění">
+      <p class="galerie-popisek">Autočalounění</p>
+    </div>
+
+    <div class="galerie-polozka">
+      <img src="assets/img/realizace/realizace-4.jpg" alt="Oprava čalouněného křesla">
+      <p class="galerie-popisek">Oprava čalouněného křesla</p>
+    </div>
+
+    <div class="galerie-polozka">
+      <img src="assets/img/realizace/realizace-5.jpg" alt="Čalouněné dveře">
+      <p class="galerie-popisek">Čalouněné dveře</p>
+    </div>
+
+    <div class="galerie-polozka">
+      <img src="assets/img/realizace/realizace-6.jpg" alt="Matrace na míru">
+      <p class="galerie-popisek">Matrace na míru</p>
+    </div>
+
+  </div>
+
+  <p style="margin-top:20px; font-size:0.85rem; color:#7a5236;">
+    Pozn.: Zobrazené fotografie jsou prozatím pouze ukázkové (placeholder).
+    Nahraďte je, prosím, skutečnými fotografiemi vašich realizací.
+  </p>
+</main>
+
+<!-- =========================================================
+     LIGHTBOX - OKNO SE ZVĚTŠENÝM OBRÁZKEM (needa upravovat)
+     ========================================================= -->
+<div class="lightbox-pozadi" id="lightbox-pozadi">
+  <span class="lightbox-zavrit" id="lightbox-zavrit">&times;</span>
+  <div class="lightbox-obsah">
+    <img id="lightbox-obrazek" src="" alt="">
+    <p class="lightbox-popisek" id="lightbox-popisek"></p>
+  </div>
+</div>
+
+<footer class="paticka">
+  &copy; <span id="rok"></span> Čalounictví Jiří Dobšík — Brno-Žebětín
+</footer>
+
+<script>document.getElementById("rok").textContent = new Date().getFullYear();</script>
+<script src="assets/js/lightbox.js"></script>
+</body>
+</html>

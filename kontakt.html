@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Čalounictví Jiří Dobšík — Kontakt</title>
+<meta name="description" content="Kontaktní údaje na čalounictví Jiří Dobšík, Klobouček 421/23, Brno-Žebětín.">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/logo.jpg">
+</head>
+<body>
+
+<header class="hlavicka">
+  <div class="hlavicka-obsah">
+    <div class="logo-blok">
+      <img src="assets/img/logo.jpg" alt="Logo - Čalounictví Jiří Dobšík">
+      <div>
+        <p class="nazev-firmy">Čalounictví Jiří Dobšík</p>
+        <p class="podnazev-firmy">Brno-Žebětín &middot; na míru, s citem pro detail</p>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">O firmě</a></li>
+        <li><a href="realizace.html">Realizace</a></li>
+        <li><a href="kontakt.html" class="aktivni">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="obsah">
+  <h1>Kontaktní údaje</h1>
+
+  <!-- =========================================================
+       KONTAKTNÍ TABULKA
+       ----------------------------------------------------------
+       Pro úpravu údajů stačí přepsat text napravo od dvojtečky
+       (v pravém sloupci tabulky), tedy text MEZI značkami
+       <td> a </td>. Nic jiného neměňte.
+       ========================================================= -->
+  <div class="karta">
+    <table class="kontakt-tabulka">
+      <tr>
+        <td>Jméno:</td>
+        <td>Jiří Dobšík</td>
+      </tr>
+      <tr>
+        <td>Provozovna:</td>
+        <td>Klobouček 421/23, 641&nbsp;00 Brno-Žebětín</td>
+      </tr>
+      <tr>
+        <td>Telefon:</td>
+        <td><a href="tel:+420606112144">+420&nbsp;606&nbsp;112&nbsp;144</a></td>
+      </tr>
+      <tr>
+        <td>E-mail:</td>
+        <td><a href="mailto:dobsik.jiri@centrum.cz">dobsik.jiri@centrum.cz</a></td>
+      </tr>
+      <tr>
+        <td>IČ:</td>
+        <td>72523662</td>
+      </tr>
+      <tr>
+        <td>Otevírací doba:</td>
+        <td>Po&ndash;Pá: 8:00&ndash;17:00 (doporučujeme předchozí telefonickou domluvu)</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="karta">
+    <h2>Kde nás najdete</h2>
+    <p>Dílna se nachází v Brně-Žebětíně, na adrese Klobouček 421/23.</p>
+
+    <!-- =========================================================
+         MAPA
+         Odkaz lze v případě potřeby aktualizovat na Google Maps -
+         stačí vyhledat adresu na maps.google.com, kliknout na
+         "Sdílet" -> "Vložit mapu" a zkopírovaný kód (pouze to,
+         co je uvnitř uvozovek u src="...") vložit níže.
+         ========================================================= -->
+    <div class="mapa-wrap">
+      <iframe
+        src="https://www.google.com/maps?q=Klobou%C4%8Dek%20421%2F23%2C%20641%2000%20Brno-%C5%BBeb%C4%9Bt%C3%ADn&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa - Čalounictví Jiří Dobšík">
+      </iframe>
+    </div>
+  </div>
+</main>
+
+<footer class="paticka">
+  &copy; <span id="rok"></span> Čalounictví Jiří Dobšík — Brno-Žebětín
+</footer>
+
+<script>document.getElementById("rok").textContent = new Date().getFullYear();</script>
+</body>
+</html>
