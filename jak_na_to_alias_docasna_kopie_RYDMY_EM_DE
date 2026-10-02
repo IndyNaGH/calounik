@@ -1,0 +1,121 @@
+# Prezentační web — Čalounictví Jiří Dobšík
+
+## 1. Účel projektu
+
+Jednoduchá, "tenká" prezentační webová stránka (3 podstránky) pro malou
+čalounickou živnost **Jiří Dobšík** (Brno-Žebětín). Cílem je poskytnout
+základní online vizitku firmy, kterou bude moci **bez znalosti HTML**
+upravovat i netechnický uživatel (majitel firmy).
+
+Web vznikl jako ukázka/prototyp. Zadání vycházelo z požadavku čerpat
+reálná data z Facebookové stránky `jirkadobsikjirka` — tu se ale
+nepodařilo automaticky stáhnout (Facebook blokuje nepřihlášené
+automatizované požadavky). Proto byla:
+
+- **reálná kontaktní data** (jméno, adresa, telefon, e-mail, IČ)
+  dohledána z veřejného rejstříku firem (firmyvdosahu.cz, výpis na
+  základě IČ 72523662),
+- **logo** použito ze souboru dodaného uživatelem
+  (`assets/img/logo.jpg`, původně `jirik_logo.jpg`),
+- **fotografie realizací** prozatím nahrazeny generovanými
+  **placeholder obrázky** (jednoduché barevné dlaždice s popisky,
+  v teplých hnědo-béžových tónech ladících s designem webu) —
+  je třeba je nahradit skutečnými fotografiemi zakázek.
+
+## 2. Struktura webu (záložky v menu)
+
+| Soubor            | Záložka v menu | Obsah                                                        |
+|-------------------|----------------|---------------------------------------------------------------|
+| `index.html`      | O firmě        | Krátký popis firmy, nabízené služby, proč zvolit firmu         |
+| `realizace.html`  | Realizace      | Galerie ukázek prací — klik na miniaturu zvětší obrázek (lightbox) |
+| `kontakt.html`    | Kontakt        | Kontaktní tabulka (jméno, adresa, telefon, e-mail, IČ) + mapa  |
+
+Všechny stránky sdílí stejnou hlavičku s logem, názvem firmy a
+navigačním menu, a stejnou patičku s copyrightem (rok se generuje
+automaticky přes JavaScript).
+
+## 3. Technické řešení
+
+- **Čisté HTML/CSS/JS** — žádný build proces, žádné závislosti,
+  žádný framework. Stránky lze otevřít přímo v prohlížeči nebo
+  nasadit na libovolný webhosting bez konfigurace.
+- **Znaková sada:** UTF-8 (`<meta charset="UTF-8">`) — plně pokrývá
+  českou diakritiku a je to standard pro moderní web.
+- **CSS proměnné** (`:root { --barva-... }`) v `assets/css/style.css`
+  definují barevné schéma (teplé přírodní tóny — hnědá, béžová,
+  odstíny dřeva), takže změna celkové barevnosti webu je možná na
+  jednom místě.
+- **Lightbox galerie** řešen vlastním, cca 40řádkovým JS souborem
+  (`assets/js/lightbox.js`) bez externí knihovny — po kliknutí na
+  miniaturu se zobrazí tmavý overlay se zvětšeným obrázkem a popiskem,
+  zavírá se křížkem, kliknutím mimo obrázek nebo klávesou Esc.
+- **Responzivní layout** — menu, galerie i text se přizpůsobí i na
+  mobilních zařízeních (media query v CSS).
+
+## 4. Adresářová struktura
+
+```
+/var/www/calounik/
+├── index.html                  # Stránka "O firmě"
+├── realizace.html               # Stránka "Realizace" (galerie + lightbox)
+├── kontakt.html                  # Stránka "Kontakt"
+├── README.md                     # Tento soubor
+└── assets/
+    ├── css/
+    │   └── style.css             # Veškerý vzhled webu
+    ├── js/
+    │   └── lightbox.js           # Logika zvětšování obrázků v galerii
+    └── img/
+        ├── logo.jpg               # Logo firmy (z FB profilu)
+        └── realizace/
+            ├── realizace-1.jpg    # Placeholder - sedací souprava
+            ├── realizace-2.jpg    # Placeholder - postel na míru
+            ├── realizace-3.jpg    # Placeholder - autočalounění
+            ├── realizace-4.jpg    # Placeholder - oprava křesla
+            ├── realizace-5.jpg    # Placeholder - čalouněné dveře
+            └── realizace-6.jpg    # Placeholder - matrace na míru
+```
+
+## 5. Jak web editovat bez znalosti HTML
+
+Každý HTML soubor obsahuje viditelné komentáře (`<!-- ... -->`) přímo
+u míst, která je bezpečné upravovat — stačí přepisovat **text mezi
+značkami**, značky samotné (to, co je v `< >`) neměnit.
+
+### Úprava textu o firmě
+Otevřít `index.html`, najít sekci `<main class="obsah">` a přepsat
+text v odstavcích `<p>...</p>` nebo položkách seznamu `<li>...</li>`.
+
+### Úprava kontaktů
+Otevřít `kontakt.html`, v tabulce přepsat pouze text v pravém sloupci
+(druhý `<td>...</td>` na každém řádku).
+
+### Přidání/odebrání ukázky realizace
+V `realizace.html`:
+1. Novou fotografii nahrát do `assets/img/realizace/` (bez diakritiky
+   a mezer v názvu souboru).
+2. Zkopírovat celý blok:
+   ```html
+   <div class="galerie-polozka">
+     <img src="assets/img/realizace/NAZEV-SOUBORU.jpg" alt="Popis">
+     <p class="galerie-popisek">Popis realizace</p>
+   </div>
+   ```
+3. Vložit za poslední položku, upravit název souboru a popisek.
+4. Pro smazání ukázky stačí smazat odpovídající blok.
+
+### Výměna loga
+Nahradit soubor `assets/img/logo.jpg` novým obrázkem se stejným
+názvem (ideálně čtvercový formát, min. 200×200 px).
+
+## 6. Otevřené body / doporučené další kroky
+
+- [ ] Nahradit placeholder fotografie v `assets/img/realizace/`
+      skutečnými snímky realizovaných zakázek.
+- [ ] Ověřit/doplnit otevírací dobu a případně doplnit druhé telefonní
+      číslo, pokud existuje.
+- [ ] Zvážit získání souhlasu a oficiálního exportu dat/fotografií
+      přímo z Facebookové stránky (ruční export administrátorem účtu),
+      jelikož automatizované stažení nebylo možné.
+- [ ] Při nasazení na ostrý hosting zkontrolovat/aktualizovat odkaz na
+      mapu v `kontakt.html` (Google Maps iframe).
